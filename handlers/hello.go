@@ -15,7 +15,7 @@ func NewHello(l *log.Logger) *Hello {
 	return &Hello
 }
 
-func (h *Hello) ServerHTTPP(rw http.ReadResponse, r *http.Request) {
+func (h *Hello) ServerHTTPP(rw http.ResponseWriter, r *http.Request) {
 	h.l.Printf("Hello World")
 	d, err := ioutil.ReadAll(r.Body)
 	if err != nil {
